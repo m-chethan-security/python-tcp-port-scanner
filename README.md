@@ -37,3 +37,86 @@ for port in range(1, 1025):
         pass
     finally:
         s.close()
+```
+
+Testing Environment
+Operating System: Kali Linux
+Target: Intentionally vulnerable lab VM
+Scanner: Python socket
+Comparison tool: Nmap
+Scan type: TCP Connect Scan (-sT)
+Port range: 1–1024
+Results
+
+The Python scanner identified the following open TCP ports within the 1–1024 range:
+
+21
+22
+23
+25
+53
+80
+111
+139
+445
+512
+513
+514
+
+Nmap's -sT scan identified the same open ports within this range and additionally provided service identification.
+
+Python Scanner vs Nmap
+
+The Python implementation helped me understand the basic mechanism behind a TCP connect scan.
+
+The Python scanner determines whether a port is reachable by attempting to establish a TCP connection.
+
+Nmap builds on this concept and provides considerably more functionality, including service identification and many other scanning techniques.
+
+Python scanner
+
+Nmap scan
+
+Key Learnings
+Understanding Python's socket module
+Creating TCP sockets
+Understanding socket.connect()
+TCP port states at a basic level
+Handling connection timeouts
+Exception handling in network programs
+Understanding the basic idea behind TCP connect scanning
+Comparing a custom implementation with Nmap
+Limitations
+
+This is a learning project and is intentionally simple.
+
+It does not currently include:
+
+Multithreading
+Service/version detection
+OS detection
+UDP scanning
+Advanced error handling
+Stealth scanning techniques
+Future Improvements
+
+Possible improvements include:
+
+Multithreaded scanning
+Command-line arguments
+Custom port ranges
+Better error handling
+Service detection
+Output formatting
+Logging scan results
+Ethical Use
+
+This tool was developed and tested in an isolated lab environment.
+
+Only scan systems that you own or have explicit permission to test.
+
+Author
+
+Chethan M
+
+B.Tech Computer Science & Engineering — Cyber Security
