@@ -1,6 +1,6 @@
 import socket
 
-target = "192.168.1.3"
+target = "<target_ip>"
 
 for port in range(1,1025):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
